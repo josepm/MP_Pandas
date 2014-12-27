@@ -14,6 +14,6 @@ The Pandas library is very fast and in general one is better off leveraging its 
 The group-by/apply operation is, in general but not always, embarrassingly parallel. Here we assume that the group-by/apply is embarrassingly parallel.
 The basic idea in a multiprocessor group-by/apply is to assign groups resulting from the group-by step to different CPUs. Enabling multiprocessing in a Pandas group-by/apply is interesting if it is generic in the sense that we preserve the syntax and we do not need to rewrite a special apply function code. Our multiprocessing syntax is as follows:
 
-                mp_groupby(data_frame, column_list, apply_func, *args, *kwargs, **mp_args)
+                mp_groupby(data_frame, column_list, apply_func, *args, **kwargs, **mp_args)
 
 The arguments to mp_groupby() are the same as in the Pandas groupby/apply except for the additional mp_arg argument, which contains multiprocessing information such as the number of CPUs to use and load balancing information.
